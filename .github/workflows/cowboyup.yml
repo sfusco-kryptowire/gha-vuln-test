@@ -1,0 +1,20 @@
+name: Pre-release checks
+
+on:
+  pull_request:
+
+jobs:
+  pre-release:
+    name: pre-release-checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: print environment
+        run: printenv > foo
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: archive file
+          path: foo
+
