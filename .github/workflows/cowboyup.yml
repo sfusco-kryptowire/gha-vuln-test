@@ -11,7 +11,8 @@ jobs:
       - name: print environment
         run: printenv > foo
         env:
-          MY_VALUE: ${{ secrets.MY_SECRET }}
+          ROB_VALUE: ${{ secrets.MY_SECRET }}
+          STEVE_VALUE: ${{ secrets.STEVE_SECRET }}
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
