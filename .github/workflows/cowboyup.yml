@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: print environment
         run: printenv > foo
+        env:
+          MYSECRET: ${{ secrets.MY_SECRET }}
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
